@@ -1,0 +1,9 @@
+import requests
+from bs4 import BeautifulSoup
+
+link = "https://www.epubbooks.com/"
+html = requests.get(link).text
+data = BeautifulSoup(html, 'html.parser')
+
+print data.get_text().encode('utf-8')
+#y = re.search('Leukemia', data)
