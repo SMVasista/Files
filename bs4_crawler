@@ -1,9 +1,18 @@
+import re
 import requests
+from sys import argv
 from bs4 import BeautifulSoup
 
-link = "https://www.epubbooks.com/"
-html = requests.get(link).text
-data = BeautifulSoup(html, 'html.parser')
+script, linklist, searchlist = argv
 
-print data.get_text().encode('utf-8')
-#y = re.search('Leukemia', data)
+links = [links.rstrip('\n') for links in open(linklist)]
+sl = [sl.rstrip('\n') for sl in open(sl)]
+
+for i in range(len(links)):
+
+	link = links[i]
+	html = requests.get(link).text
+	data = BeautifulSoup(html, 'html.parser')
+
+	a = data.find(string=re.compile(sl[i]))
+	print a.find_parent()
