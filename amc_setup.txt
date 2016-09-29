@@ -1,0 +1,44 @@
+<START-AMC>
+running_mode: 1
+
+bio: -path /lsf_cs67/AMC_DATA_DUMP/Input/inputfiles/LC_ONCO_V16.2.2.bio
+imd: -path /lsf_cs67/AMC_DATA_DUMP/Input/inputfiles/LC_ONCO_V16.2.2.iMD
+category1: Yes
+category2: Yes
+category3: No
+category1_validation_type: SOC_DRUGS,KEY_ENHANCEMENT
+#,NON_NEGOTIABLE_STUDIES,PROFILE_STEADY_STATE,KEY_HYPOTHESIS,KEY_ENHANCEMENT
+soc_setup_path: -path /home/priyankar/Desktop/AMC/30_8_16/soc_SETUP.txt
+non_soc_setup_path: -path /home/priyankar/Desktop/AMC/30_8_16/NONsoc_SETUP.txt
+
+lsf_outputdir: -path /lsf_cs67/AMC_DATA_DUMP/Output
+
+key_enhancement_gene_filepath: -path /home/priyankar/Desktop/AMC/29_8_16/GENE_SETUP/gene_list.txt
+#key_additional_fixes_gene_filepath: -path /home/sindhu/Desktop/27_6_2016/dump/TC_TEAM/done/tools_i_tested/AMC_tool/AMC_TOOL_9_6_2016/FILES/key_additional_fixes.txt
+ts_tp_path: -path /APF/data_collation/ASSET_TEAM/RR/sensitivityAnalysis/LC_input_data_ONCO_V3.8/TS_TP_LC_ONCO_V16_1_1
+sensitivityanalysis_gene_filepath: -path /home/priyankar/Desktop/AMC/30_8_16/GENE_SETUP/sensitivit_analysis_gene_file.txt
+
+category2_validation_type: NON_SOC_DRUGS
+
+#enhancement_gene_filepath: -path /home/sindhu/Desktop/27_6_2016/dump/TC_TEAM/done/tools_i_tested/AMC_tool/AMC_TOOL_9_6_2016/FILES/enhancement.txt
+#additional_fixes_gene_filepath: -path /home/sindhu/Desktop/27_6_2016/dump/TC_TEAM/done/tools_i_tested/AMC_tool/AMC_TOOL_9_6_2016/FILES/additional_fixes.txt
+#sensitivity_fixes_gene_filepath: -path /home/sindhu/Desktop/27_6_2016/dump/TC_TEAM/done/tools_i_tested/AMC_tool/AMC_TOOL_9_6_2016/FILES/sensitivity_fixes.txt
+
+key_enhancement_options: APF_STATUS
+enhancement_options:  APF_STATUS
+
+category3_validation_type: HYPED_DRUG_EFFECTS
+run_sensitivityAnalysis : 1
+sensitivityanalysis_controlruntime: 50000
+sensitivityanalysis_diseaseruntime: 200000
+hyped_drug_effect_threshold: 80
+hyped_drug_effect_lsf_outputdir: -path /lsf_cs67/AMC_DATA_DUMP/Output
+ 
+
+hyped_drug_effect_diseaseruntime: 200000
+hyped_drug_effect_drugruntime: 275000
+#criticality_input_dir: -path /lsf_servers/cs142/lsf_cs142/130716_AMC/output
+sensitivityanalysis_kd_values: 75
+sensitivityanalysis_oe_values: 500,1000
+
+<END-AMC>
